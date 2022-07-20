@@ -1,0 +1,112 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreatePostInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input CreateStoryInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input CreateUserInput {
+  fullname: String!
+  profileUrl: String!
+  role: Roles!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Mutation {
+  createPost(createPostInput: CreatePostInput!): Post!
+  createStory(createStoryInput: CreateStoryInput!): Story!
+  createUser(createUserInput: CreateUserInput!): User!
+  removePost(id: Int!): Post!
+  removeStory(id: Int!): Story!
+  removeUser(id: Int!): User!
+  updatePost(updatePostInput: UpdatePostInput!): Post!
+  updateStory(updateStoryInput: UpdateStoryInput!): Story!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+}
+
+type Post {
+  adImg: String!
+  adLink: String!
+  adReadtime: String!
+  adTitle: String!
+  comments: String!
+  createdAt: DateTime
+  id: String!
+  likes: Float!
+  p_updatedAt: DateTime
+  postImg: [String!]!
+  postTitle: String!
+  postType: PostType!
+  postedTime: DateTime!
+  tags: String!
+}
+
+enum PostType {
+  ADVERTISEMENT
+  BANNER
+  POST
+}
+
+type Query {
+  post(id: Int!): Post!
+  story(id: Int!): Story!
+  user(id: Int!): User!
+}
+
+enum Roles {
+  DEVELOPER
+  DIRECTOR
+  HR
+  MANAGER
+  MARKETING
+  SALES
+  TESTER
+  UIUX
+}
+
+type Story {
+  activeStatus: Boolean!
+  id: String!
+  likes: Float!
+  storyImg: String!
+  storyTitle: String!
+}
+
+input UpdatePostInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input UpdateStoryInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input UpdateUserInput {
+  fullname: String
+  id: Int!
+  profileUrl: String
+  role: Roles
+}
+
+type User {
+  createdAt: DateTime
+  fullname: String!
+  id: String!
+  profileUrl: String!
+  role: Roles!
+  updatedAt: DateTime
+}
