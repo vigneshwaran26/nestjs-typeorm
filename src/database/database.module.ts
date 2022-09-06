@@ -13,6 +13,7 @@ import dbConfig from './db.config';
       ],
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => {
+        console.log(configService.get('typeOrmConfig'))
         return { ...configService.get('typeOrmConfig') };
       },
     }),

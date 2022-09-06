@@ -6,6 +6,7 @@ import { DatabaseModule } from "./database/database.module";
 import { GraphQLModule } from "@nestjs/graphql";
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { ConfigModule } from '@nestjs/config';
+import dbConfig from "./database/db.config";
 
 @Module({
     imports:[
@@ -18,7 +19,8 @@ import { ConfigModule } from '@nestjs/config';
             context: ({ req }) => ({ headers: req.headers }),
           }),
           ConfigModule.forRoot({
-            envFilePath: '.env',
+            isGlobal: true,
+            load: [dbConfig]
           }),
           UserModule, 
           PostModule, 

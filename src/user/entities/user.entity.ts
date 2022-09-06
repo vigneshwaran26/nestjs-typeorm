@@ -25,7 +25,7 @@ export enum Roles {
 registerEnumType(Roles,{name:'Roles'})
 
 @ObjectType()
-@Entity()
+@Entity("users")
 export class User extends BaseEntity{
   @Field()
   @PrimaryGeneratedColumn('uuid', { name: 'u_id' })
