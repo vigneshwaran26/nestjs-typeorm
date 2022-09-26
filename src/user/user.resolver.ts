@@ -13,12 +13,12 @@ export class UserResolver {
     return this.userService.create(createUserInput);
   }
 
-  @Query(() => [User], { name: 'user' })
-  findAll() {
+  @Query(() => [User], { name: 'getAllUsers' })
+  findAllUsers() {
     return this.userService.findAll();
   }
 
-  @Query(() => User, { name: 'user' })
+  @Query(() => User, { name: 'getOneUser' })
   findOne(@Args('id', { type: () => Int }) id: number) {
     return this.userService.findOne(id);
   }

@@ -27,7 +27,9 @@ export default registerAs('typeOrmConfig', async () => {
     subscribers: [__dirname + '/../**/*.subscriber{.ts,.js}'],
     migrations: [__dirname + '/../migrations/*{.ts,.js}'],
     cli: {
-        migrationsDir: __dirname + '/../migrations',
+        // migrationsDir: __dirname + '/../migrations',
+        // migrationsDir: path.join('src', 'migrations'),
+        migrationsDir: 'src/migrations',
       },
     synchronize: process.env.DB_SYNC === 'true',
     logging: true,

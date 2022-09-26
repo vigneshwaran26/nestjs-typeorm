@@ -13,6 +13,7 @@ input CreateStoryInput {
 }
 
 input CreateUserInput {
+  email: String!
   fullname: String!
   profileUrl: String!
   role: Roles!
@@ -59,9 +60,10 @@ enum PostType {
 }
 
 type Query {
+  getAllUsers: [User!]!
+  getOneUser(id: Int!): User!
   post(id: Int!): Post!
   story(id: Int!): Story!
-  user(id: Int!): User!
 }
 
 enum Roles {
@@ -96,6 +98,7 @@ input UpdateStoryInput {
 }
 
 input UpdateUserInput {
+  email: String
   fullname: String
   id: Int!
   profileUrl: String
@@ -104,6 +107,7 @@ input UpdateUserInput {
 
 type User {
   createdAt: DateTime
+  email: String!
   fullname: String!
   id: String!
   profileUrl: String!

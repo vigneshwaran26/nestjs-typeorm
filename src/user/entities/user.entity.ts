@@ -33,7 +33,11 @@ export class User extends BaseEntity{
 
   @Field()
   @Column({ name: 'U_user_name' })
-  fullname: String;
+  fullname: string;
+
+  @Field()
+  @Column({name:'u_email'})
+  email: string;
 
   @Field(() => Roles)
   @Column({ name: 'u_role', type:'enum', enum:Roles })

@@ -4,11 +4,14 @@ import { Roles } from '../entities/user.entity';
 @InputType()
 export class CreateUserInput {
   @Field()
-  fullname: String;
+  fullname: string;
+
+  @Field()
+  email: string;
 
   @Field(() => Roles)
   role: Roles;
 
   @Field()
-  profileUrl: String;
+  profileUrl: string;
 }

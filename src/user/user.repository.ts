@@ -9,4 +9,8 @@ export class UserRepository extends Repository<User> {
     public async createUser(input){
         return this.save(input)
     }
+
+    public async findAllUsers(){
+        return this.createQueryBuilder('user').select(['user']).getMany()
+    }
 }
