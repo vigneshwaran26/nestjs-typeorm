@@ -2,16 +2,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-input CreatePostInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
-}
-
-input CreateStoryInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
-}
-
 input CreateUserInput {
   email: String!
   fullname: String!
@@ -25,45 +15,14 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 scalar DateTime
 
 type Mutation {
-  createPost(createPostInput: CreatePostInput!): Post!
-  createStory(createStoryInput: CreateStoryInput!): Story!
   createUser(createUserInput: CreateUserInput!): User!
-  removePost(id: Int!): Post!
-  removeStory(id: Int!): Story!
   removeUser(id: Int!): User!
-  updatePost(updatePostInput: UpdatePostInput!): Post!
-  updateStory(updateStoryInput: UpdateStoryInput!): Story!
   updateUser(updateUserInput: UpdateUserInput!): User!
-}
-
-type Post {
-  adImg: String!
-  adLink: String!
-  adReadtime: String!
-  adTitle: String!
-  comments: String!
-  createdAt: DateTime
-  id: String!
-  likes: Float!
-  p_updatedAt: DateTime
-  postImg: [String!]!
-  postTitle: String!
-  postType: PostType!
-  postedTime: DateTime!
-  tags: String!
-}
-
-enum PostType {
-  ADVERTISEMENT
-  BANNER
-  POST
 }
 
 type Query {
   getAllUsers: [User!]!
   getOneUser(id: Int!): User!
-  post(id: Int!): Post!
-  story(id: Int!): Story!
 }
 
 enum Roles {
@@ -75,26 +34,6 @@ enum Roles {
   SALES
   TESTER
   UIUX
-}
-
-type Story {
-  activeStatus: Boolean!
-  id: String!
-  likes: Float!
-  storyImg: String!
-  storyTitle: String!
-}
-
-input UpdatePostInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
-}
-
-input UpdateStoryInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
 }
 
 input UpdateUserInput {

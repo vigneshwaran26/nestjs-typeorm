@@ -1,8 +1,5 @@
 import { ObjectType, Field, registerEnumType } from '@nestjs/graphql';
 import { IsDate } from 'class-validator';
-import { GpayTransaction } from 'src/gpay-transaction/entities/gpay-transaction.entity';
-import { Post } from 'src/post/entities/post.entity';
-import { Story } from 'src/story/entities/story.entity';
 import {
   Column,
   PrimaryGeneratedColumn,
@@ -44,23 +41,6 @@ export class User extends BaseEntity{
   @Column({ name: 'u_role', type:'enum', enum:Roles })
   role: Roles;
 
-  @OneToMany(() => Post, (post) => post.user, {
-    cascade: true,
-    eager: true,
-  })
-  post: Post[];
-
-  @OneToMany(() => GpayTransaction, (gpayt) => gpayt.user, {
-    cascade: true,
-    eager: true,
-  })
-  gpayTransactions: GpayTransaction[];
-
-  @OneToMany(() => Story, (story) => story.user, {
-    cascade: true,
-    eager: true,
-  })
-  story: Story[];
 
   @Field()
   @Column({ name: 'U_profile_url' })
