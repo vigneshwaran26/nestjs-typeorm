@@ -6,6 +6,7 @@ import { DatabaseModule } from "./database/database.module";
 import { GraphQLModule } from "@nestjs/graphql";
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { ConfigModule } from '@nestjs/config';
+import { GpayTransactionModule } from './gpay-transaction/gpay-transaction.module';
 import dbConfig from "./database/db.config";
 
 @Module({
@@ -25,7 +26,8 @@ import dbConfig from "./database/db.config";
           UserModule, 
           PostModule, 
           StoryModule,
-          DatabaseModule],
+          DatabaseModule,
+          GpayTransactionModule],
     providers:[]
 })
 export class AppModule{}

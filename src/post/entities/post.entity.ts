@@ -28,8 +28,6 @@ export class Post extends BaseEntity{
   id: string;
 
   @ManyToOne(() => User, (user) => user.post, {
- 
-
   })
   @JoinColumn({ name: 'u_id' })
   user: User;
